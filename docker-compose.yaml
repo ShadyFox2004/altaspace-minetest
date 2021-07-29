@@ -7,7 +7,7 @@ services:
     entrypoint: "/usr/local/bin/minetestserver"
     command: "--config /etc/minetest/minetest.conf --gameid nodecore"
     volumes:
-      #- /home/docker/minetest/minetest.conf:/etc/minetest/minetest.conf
+      - /home/docker/minetest/worlds:/usr/local/share/minetest/worlds
       - /home/docker/minetest/games:/usr/local/share/minetest/games
     ports:
       - 30000:30000/udp
