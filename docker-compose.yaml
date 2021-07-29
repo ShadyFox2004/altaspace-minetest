@@ -3,10 +3,12 @@ version: "2.1"
 services:
   minetest:
     image: registry.gitlab.com/minetest/minetest/server:latest
-    container_name: minetes
+    container_name: minetest
+    entrypoint: "/usr/local/bin/minetestserver"
+    command: "--config /etc/minetest/minetest.conf --gameid nodecore"
     volumes:
       - /home/docker/minetest/minetest.conf:/etc/minetest/minetest.conf
-      - /home/docker/minetest:/config/.minetest
+      #- /home/docker/minetest:/config/.minetest
     ports:
       - 30000:30000/udp
     restart: unless-stopped
