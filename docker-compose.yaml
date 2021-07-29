@@ -4,7 +4,7 @@ services:
   minetest:
     image: registry.gitlab.com/minetest/minetest/server:latest
     container_name: minetest
-    command: "--gameid nodecore"
+    command: "minetest-server --gameid nodecore"
     volumes:
       - /home/docker/minetest:/config/.minetest
     ports:
