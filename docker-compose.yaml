@@ -5,7 +5,7 @@ services:
     image: registry.gitlab.com/minetest/minetest/server:latest
     container_name: minetest
     entrypoint: "/usr/local/bin/minetestserver"
-    command: "--config /etc/minetest/minetest.conf --gameid nodecore"
+    command: "--config /etc/minetest/minetest.conf --gameid nodecore --worldname world"
     volumes:
       - /home/docker/minetest/worlds:/usr/local/share/minetest/worlds
       - /home/docker/minetest/games:/usr/local/share/minetest/games
