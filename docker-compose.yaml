@@ -3,9 +3,9 @@ version: "2.1"
 services:
   minetest:
     image: registry.gitlab.com/minetest/minetest/server:latest
-    container_name: minetest
-    command: "minetest-server --gameid nodecore"
+    container_name: minetes
     volumes:
+      - /home/docker/minetest/minetest.conf:/etc/minetest/minetest.conf
       - /home/docker/minetest:/config/.minetest
     ports:
       - 30000:30000/udp
