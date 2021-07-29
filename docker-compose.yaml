@@ -5,10 +5,11 @@ services:
     image: registry.gitlab.com/minetest/minetest/server:latest
     container_name: minetest
     entrypoint: "/usr/local/bin/minetestserver"
-    command: "--config /etc/minetest/minetest.conf --gameid nodecore --worldname world"
+    command: "--config /usr/local/share/minetest/minetest.conf --gameid nodecore --worldname world "
     volumes:
       - /home/docker/minetest/worlds:/usr/local/share/minetest/worlds
       - /home/docker/minetest/games:/usr/local/share/minetest/games
+      - /home/docker/minetest/minetest.conf:/usr/local/share/minetest/minetest.conf
     ports:
       - 30000:30000/udp
     restart: unless-stopped
