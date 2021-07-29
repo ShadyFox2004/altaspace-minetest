@@ -8,7 +8,7 @@ services:
     command: "--config /etc/minetest/minetest.conf --gameid nodecore"
     volumes:
       #- /home/docker/minetest/minetest.conf:/etc/minetest/minetest.conf
-      - /home/docker/minetest/games:/var/lib/minetest/.minetest/games
+      - /home/docker/minetest/games:/usr/local/share/minetest/games
     ports:
       - 30000:30000/udp
     restart: unless-stopped
