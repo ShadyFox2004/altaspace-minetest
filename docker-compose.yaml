@@ -2,13 +2,9 @@
 version: "2.1"
 services:
   minetest:
-    image: ghcr.io/linuxserver/minetest
+    image: registry.gitlab.com/minetest/minetest/server:latest
     container_name: minetest
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - CLI_ARGS="--gameid NodeCore" #optional
+    command: "--gameid nodecore"
     volumes:
       - /home/docker/minetest:/config/.minetest
     ports:
